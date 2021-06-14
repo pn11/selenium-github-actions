@@ -25,6 +25,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install selenium
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Install Google Chrome
+      run: |
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
+        sudo apt update
+        sudo apt -f install -y
+        wget https://chromedriver.storage.googleapis.com/92.0.4515.43/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
     - name: Install Chrome driver
       run: |
         wget https://chromedriver.storage.googleapis.com/92.0.4515.43/chromedriver_linux64.zip
