@@ -29,3 +29,6 @@ jobs:
       run: |
         wget https://chromedriver.storage.googleapis.com/92.0.4515.43/chromedriver_linux64.zip
         unzip chromedriver_linux64.zip
+    - name: Run selenium
+      run: |
+        python selenium_test.py
