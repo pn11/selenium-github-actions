@@ -23,6 +23,6 @@ driver = webdriver.Chrome(executable_path="./chromedriver", chrome_options=chrom
 JACK = 'https://twitter.com/jack/photo'
 driver.get(JACK)
 time.sleep(10)
-img_url = JACK + driver.find_element_by_xpath('/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div[1]/div/div/div/div/div/img').get_attribute('src')
+img_url = driver.find_element_by_xpath('/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div[1]/div/div/div/div/div/img').get_attribute('src')
 
 r = requests.post(DISCORD_WEBHOOK_URL, data=json.dumps({'content': 'test', 'embeds': [{'image': {'url': img_url}}]}), headers={'content-type': 'application/json'})
