@@ -38,4 +38,4 @@ jobs:
       run: |
         python selenium_test.py
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
