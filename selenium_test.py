@@ -19,8 +19,8 @@ chromeOptions.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(executable_path="./chromedriver", chrome_options=chromeOptions)
 
 
-GOOGLE = 'https://www.google.com'
-driver.get(GOOGLE)
-img_url = GOOGLE + driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/img').get_attribute('src')
+JACK = 'https://twitter.com/jack/photo'
+driver.get(JACK)
+img_url = JACK + driver.find_element_by_xpath('/html/body/div/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div[1]/div/div/div/div/div/img').get_attribute('src')
 
 r = requests.post(DISCORD_WEBHOOK_URL, data=json.dumps({'content': 'test', 'embeds': [{'image': {'url': img_url}}]}), headers={'content-type': 'application/json'})
