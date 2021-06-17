@@ -37,5 +37,5 @@ jobs:
     - name: Run selenium
       run: |
         python selenium_test.py
-      with:
+      env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
